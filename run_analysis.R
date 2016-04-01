@@ -1,5 +1,7 @@
 rm(list=ls())
 
+require(reshape2)  # For melt
+
 data_directory <- "UCI HAR Dataset"
 
 testfeatures_path    <- file.path(data_directory, "test", "X_test.txt") 
@@ -38,6 +40,14 @@ trainset <- read_set(trainfeatures_path, trainlabel_path, wanted_features_col, w
 total_set <- rbind(testset, trainset)
 total_set$activity <- factor(activity_labels[total_set$activity, "label"])
 
-tidy_set <- melt(total_set, id.vars=c("activity"))
-tidy_set <- aggregate(value~activity+variable, tidy_set ,mean)
+molten_set <- melt(total_set, id.vars=c("activity"))
+tidy_set   <- dcast(molten_set, activity~variable, mean)
+
+feature_names <- colnames(tidy_set)
+feature_names <- paste(rep("mean", length(feature_names)), feature_names, sep="-")
+feature_names[1] <- "activity"
+colnames(tidy_set) <- feature_names
+
+write.table(tidy_set, "mean_and_std_of_features_by_activity.txt", row.names=FALSE, quote=FALSE)
+write.table(feature_names, "features.txt", row.names=TRUE, col.names=FALSE, quote=FALSE)
 
