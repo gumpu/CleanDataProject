@@ -15,3 +15,6 @@ under the name `UCI HAR Dataset/`.
 The steps taken to derive this dataset from the original dataset are
 described in `CodeBook.md`.
 
+The source code of `run_analysis.R` also contains detailed comments 
+on how the script works.
+
