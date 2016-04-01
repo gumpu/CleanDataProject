@@ -3,9 +3,9 @@
 This dataset is based on the dataset "Human Activity Recognition Using Smartphones Dataset Version 1.0"
 that can be found at: <https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip>
 
-This dataset contains an aggregated subset of the data from the original dataset. 
+It is an aggregated subset of the data from this original dataset. 
 
-The following steps were performed:
+The following steps were performed to derive this dataset:
 
 1.  From both the training- and test set the features and labels were combined
     (variables from the X and y dataset).
@@ -25,8 +25,12 @@ The following steps were performed:
 
 
 All variables are listed in `features.txt`. These are all numerical.
+The correspond to the variables from the original set, but have the word
+'mean' prefixed to it.
 
-The variable `activity` can have the following values: WALKING, WALKING_UPSTAIRS,  WALKING_DOWNSTAIRS, SITTING, STANDING, LAYING
+The variable `activity` can have the following values: WALKING,
+WALKING_UPSTAIRS,  WALKING_DOWNSTAIRS, SITTING, STANDING, LAYING
+
 
 ## Domain and Meaning
 
