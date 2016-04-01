@@ -7,8 +7,8 @@ It is an aggregated subset of the data from this original dataset.
 
 The following steps were performed to derive this dataset:
 
-1.  From both the training- and test set the features and labels were combined
-    (variables from the X and y dataset).
+1.  From both the training- and test set the features, labels and subject data were combined
+    (variables from the X, y, and subject dataset).
 
 2.  From both the training- and test set only those features
     were chosen that either had "mean" or "std" in their name (ignoring case).
@@ -21,15 +21,20 @@ The following steps were performed to derive this dataset:
     number in the dataset was replaced by a descriptive name. For this the
     names from the file `activity_labels.txt` from the original dataset were used.
 
-5.  All feature were aggregated by activity and their mean was computed.
+5.  All feature were aggregated by subhect and activity and their mean was computed.
 
 
 All variables are listed in `features.txt`. These are all numerical.
 The correspond to the variables from the original set, but have the word
 'mean' prefixed to it.
 
+This with the exception of two variables.
+
 The variable `activity` can have the following values: WALKING,
 WALKING_UPSTAIRS,  WALKING_DOWNSTAIRS, SITTING, STANDING, LAYING
+
+The variable `subject` is an integer identifying the person that was
+wearing the measuring device.
 
 
 ## Domain and Meaning
